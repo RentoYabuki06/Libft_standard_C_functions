@@ -6,7 +6,7 @@
 /*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 14:53:55 by yabukirento       #+#    #+#             */
-/*   Updated: 2024/04/28 15:24:40 by yabukirento      ###   ########.fr       */
+/*   Updated: 2024/05/03 12:37:27 by yabukirento      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,17 @@ static size_t	ft_count(char const *s, char c)
 
 	i = 0;
 	count = 0;
-	while (s[i] != '\0')
+	while (s[i])
 	{
-		if (s[i] != c && (i == 0 || s[i - 1] == c))
+		if (i == 0)
 		{
-			count++;
+			if (s[i] != c)
+				count++;
+		}
+		else
+		{
+			if (s[i] != c && s[i - 1] == c)
+				count++;
 		}
 		i++;
 	}
@@ -39,7 +45,7 @@ static char	*ft_strndup(char const *src, size_t n)
 	if (dest == NULL)
 		return (NULL);
 	i = 0;
-	while (i < n)
+	while (i < n && src[i])
 	{
 		dest[i] = src[i];
 		i++;
@@ -56,9 +62,11 @@ static void	ft_allfree(char **ans, size_t j)
 	while (i < j)
 	{
 		free(ans[i]);
+		ans[i] = NULL;
 		i++;
 	}
-	free(ans);
+	if (ans != NULL)
+		free(ans);
 }
 
 static void	fill_split(char **ans, char const *s, char c, size_t i)
@@ -85,7 +93,8 @@ static void	fill_split(char **ans, char const *s, char c, size_t i)
 		i += len;
 		j++;
 	}
-	ans[j] = NULL;
+	if (ans != NULL)
+		ans[j] = NULL;
 }
 
 char	**ft_split(char const *s, char c)
@@ -95,7 +104,7 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	ans = (char **)malloc(sizeof(char *) * (ft_count(s, c) + 1));
-	if (!ans || !s)
+	if (!ans)
 		return (NULL);
 	fill_split(ans, s, c, 0);
 	return (ans);
