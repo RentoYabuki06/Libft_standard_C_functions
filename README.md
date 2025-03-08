@@ -1,51 +1,71 @@
-# Libft_42tokyo
+# Libft - 標準Cライブラリの再実装
 
-<pre>
-.
-├── Makefile
-├── README.md
-├── ft_atoi.c
-├── ft_bzero.c
-├── ft_calloc.c
-├── ft_isalnum.c
-├── ft_isalpha.c
-├── ft_isascii.c
-├── ft_isdigit.c
-├── ft_isprint.c
-├── ft_itoa.c
-├── ft_lstadd_back.c
-├── ft_lstadd_front.c
-├── ft_lstclear.c
-├── ft_lstdelone.c
-├── ft_lstiter.c
-├── ft_lstlast.c
-├── ft_lstmap.c
-├── ft_lstnew.c
-├── ft_lstsize.c
-├── ft_memchr.c
-├── ft_memcmp.c
-├── ft_memcpy.c
-├── ft_memmove.c
-├── ft_memset.c
-├── ft_putchar_fd.c
-├── ft_putendl_fd.c
-├── ft_putnbr_fd.c
-├── ft_putstr_fd.c
-├── ft_split.c
-├── ft_strchr.c
-├── ft_strdup.c
-├── ft_striteri.c
-├── ft_strjoin.c
-├── ft_strlcat.c
-├── ft_strlcpy.c
-├── ft_strlen.c
-├── ft_strmapi.c
-├── ft_strncmp.c
-├── ft_strnstr.c
-├── ft_strrchr.c
-├── ft_strtrim.c
-├── ft_substr.c
-├── ft_tolower.c
-├── ft_toupper.c
-└── libft.h
-</pre>
+## 概要
+**Libft** は42Tokyoの課題の一つで、C言語の標準ライブラリ関数を自作するプロジェクトです。この課題では、文字列操作、メモリ管理、リスト操作などの基本的な機能を実装し、低レベルプログラミングのスキルを強化します。
+
+---
+
+## プロジェクトの目的
+1. **標準関数の理解と実装**：
+   - `strlen`, `strcpy`, `atoi` などの基本関数の再実装。
+2. **データ構造の実装**：
+   - リンクリストやスタックの操作関数を実装。
+3. **C言語の基礎力向上**：
+   - メモリ管理やポインタ操作の理解強化。
+
+---
+
+## 機能一覧
+- **文字列操作関数**：
+  - `ft_strlen`, `ft_strcpy`, `ft_strjoin` などの実装。
+- **メモリ管理関数**：
+  - `ft_memset`, `ft_memcpy`, `ft_memmove` などの操作。
+- **リスト操作関数**：
+  - ノードの追加、削除、探索機能をサポート。
+- **ユーティリティ関数**：
+  - 数値変換、比較、文字操作機能。
+
+---
+
+## 実装要件
+1. **ライブラリ制限**：
+   - 標準Cライブラリ関数は使用不可（一部例外あり）。
+2. **エラーハンドリング**：
+   - 不正な引数やエラー状態への対応。
+3. **コード規約の遵守**：
+   - 42のノーム規約に準拠すること。
+
+---
+
+## 使用方法
+### 必要環境
+- LinuxまたはmacOS。
+- `make` コマンドと `gcc` コンパイラがインストールされていること。
+
+### コンパイル
+```
+make
+```
+### 使用
+```
+#include "libft.h"
+```
+---
+
+## 課題の学びポイント
+- **基本関数の深い理解**：
+  標準関数の内部動作を理解し、再現する力を養う。
+- **エラーハンドリングと最適化**：
+  安定したコード設計とパフォーマンス改善。
+
+---
+
+## 参考リンク
+- [42Tokyo公式ページ](https://42tokyo.jp/)
+- [Libft課題仕様書](https://github.com/42tokyo/libft)
+
+---
+
+## ライセンス
+このプロジェクトは42Tokyoの課題の一部であり、教育目的で使用されます。再配布や商用利用は制限される場合があります。
+
