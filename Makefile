@@ -1,4 +1,5 @@
 SRCS = ft_atoi.c \
+       ft_atol.c \
        ft_bzero.c \
        ft_calloc.c \
        ft_isalnum.c \
@@ -49,6 +50,7 @@ OBJSBONUS = $(SRCBONUS:.c=.o)
 
 NAME = libft.a
 
+.PHONY: all
 all: $(NAME)
 
 $(NAME): $(OBJS)
@@ -58,15 +60,19 @@ $(NAME): $(OBJS)
 %.o: %.c
 	gcc -Wall -Wextra -Werror -c $< -o $@
 
+.PHONY: bonus
 bonus: $(OBJSBONUS)
 	ar rc $(NAME) $^
 	ranlib $(NAME)
 	touch bonus
 
+.PHONY: clean
 clean:
 	rm -f $(OBJS) $(OBJSBONUS)
 
+.PHONY: fclean
 fclean: clean
 	rm -f $(NAME) bonus
 
+.PHONY: re
 re: fclean all
