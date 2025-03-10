@@ -6,7 +6,7 @@
 /*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 17:24:13 by yabukirento       #+#    #+#             */
-/*   Updated: 2025/03/08 13:26:25 by yabukirento      ###   ########.fr       */
+/*   Updated: 2025/03/10 18:43:53 by yabukirento      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stddef.h>
 # include <limits.h>
 # include <stdio.h>
-# include <libc.h>
+# include <stdbool.h>
 
 typedef struct s_list
 {
