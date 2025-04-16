@@ -6,7 +6,7 @@
 /*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 11:51:18 by yabukirento       #+#    #+#             */
-/*   Updated: 2025/04/07 12:00:10 by yabukirento      ###   ########.fr       */
+/*   Updated: 2025/04/16 12:13:14 by yabukirento      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 char	*ft_strndup(const char *src, size_t n)
 {
 	size_t		i;
-	size_t	len;
-	char	*dest;
+	size_t		len;
+	char		*dest;
 
 	len = ft_strlen(src);
 	if (len > n)
