@@ -1,71 +1,136 @@
-# Libft - 標準Cライブラリの再実装
+# Libft - Reimplementation of Standard C Library
 
-## 概要
-**Libft** は42Tokyoの課題の一つで、C言語の標準ライブラリ関数を自作するプロジェクトです。この課題では、文字列操作、メモリ管理、リスト操作などの基本的な機能を実装し、低レベルプログラミングのスキルを強化します。
-
----
-
-## プロジェクトの目的
-1. **標準関数の理解と実装**：
-   - `strlen`, `strcpy`, `atoi` などの基本関数の再実装。
-2. **データ構造の実装**：
-   - リンクリストやスタックの操作関数を実装。
-3. **C言語の基礎力向上**：
-   - メモリ管理やポインタ操作の理解強化。
+## Overview
+**Libft** is a project at 42Tokyo where students reimplement standard C library functions. This project strengthens low-level programming skills by implementing basic functions for string manipulation, memory management, and list operations.
 
 ---
 
-## 機能一覧
-- **文字列操作関数**：
-  - `ft_strlen`, `ft_strcpy`, `ft_strjoin` などの実装。
-- **メモリ管理関数**：
-  - `ft_memset`, `ft_memcpy`, `ft_memmove` などの操作。
-- **リスト操作関数**：
-  - ノードの追加、削除、探索機能をサポート。
-- **ユーティリティ関数**：
-  - 数値変換、比較、文字操作機能。
+## Project Objectives
+1. **Understanding and Implementing Standard Functions**:
+   - Reimplementing basic functions like `strlen`, `strcpy`, `atoi`, etc.
+2. **Implementing Data Structures**:
+   - Creating functions to manipulate linked lists.
+3. **Enhancing C Programming Skills**:
+   - Improving understanding of memory management and pointer operations.
 
 ---
 
-## 実装要件
-1. **ライブラリ制限**：
-   - 標準Cライブラリ関数は使用不可（一部例外あり）。
-2. **エラーハンドリング**：
-   - 不正な引数やエラー状態への対応。
-3. **コード規約の遵守**：
-   - 42のノーム規約に準拠すること。
+## Directory Structure
+```
+libft/
+├── includes/
+│   └── libft.h       # Header file with function prototypes
+├── srcs/
+│   ├── conversion/   # Type conversion functions
+│   ├── conditional/  # Character testing functions
+│   ├── memory/       # Memory manipulation functions
+│   ├── put_fd/       # Output functions
+│   ├── string/       # String manipulation functions
+│   └── bonus/        # Linked list functions
+└── Makefile          # Compilation instructions
+```
 
 ---
 
-## 使用方法
-### 必要環境
-- LinuxまたはmacOS。
-- `make` コマンドと `gcc` コンパイラがインストールされていること。
+## Function Overview
 
-### コンパイル
+### Conversion Functions
+- **ft_atoi**: Converts a string to an integer
+- **ft_atol**: Converts a string to a long integer
+- **ft_itoa**: Converts an integer to a string
+- **ft_tolower**: Converts uppercase letter to lowercase
+- **ft_toupper**: Converts lowercase letter to uppercase
+
+### Conditional Functions
+- **ft_isalnum**: Tests if character is alphanumeric
+- **ft_isalpha**: Tests if character is alphabetic
+- **ft_isascii**: Tests if character is within ASCII range
+- **ft_isdigit**: Tests if character is a digit
+- **ft_isprint**: Tests if character is printable
+
+### Memory Functions
+- **ft_bzero**: Fills memory with zeros
+- **ft_calloc**: Allocates and initializes memory
+- **ft_memchr**: Locates byte in memory
+- **ft_memcmp**: Compares memory areas
+- **ft_memcpy**: Copies memory area
+- **ft_memmove**: Copies memory area with overlap handling
+- **ft_memset**: Fills memory with a constant byte
+
+### Output Functions
+- **ft_fprintf**: Writes formatted output to file descriptor
+- **ft_putchar_fd**: Outputs a character to file descriptor
+- **ft_putendl_fd**: Outputs string with newline to file descriptor
+- **ft_putnbr_fd**: Outputs a number to file descriptor
+- **ft_putstr_fd**: Outputs a string to file descriptor
+
+### String Functions
+- **ft_split**: Splits string into array by delimiter
+- **ft_strchr**: Locates character in string
+- **ft_strcmp**: Compares two strings
+- **ft_strdup**: Duplicates a string
+- **ft_striteri**: Applies function to each character with index
+- **ft_strjoin**: Concatenates two strings
+- **ft_strlcat**: Concatenates strings with size limitation
+- **ft_strlcpy**: Copies string with size limitation
+- **ft_strlen**: Calculates string length
+- **ft_strmapi**: Maps function to each character of string
+- **ft_strncmp**: Compares n characters of two strings
+- **ft_strndup**: Duplicates n characters of a string
+- **ft_strnstr**: Locates substring in string with length limit
+- **ft_strrchr**: Locates last occurrence of character in string
+- **ft_strtrim**: Trims characters from string
+- **ft_substr**: Extracts substring from string
+
+### Bonus Functions (Linked List)
+- **ft_lstadd_back**: Adds node at the end of list
+- **ft_lstadd_front**: Adds node at the beginning of list
+- **ft_lstclear**: Deletes and frees list
+- **ft_lstdelone**: Deletes one node
+- **ft_lstiter**: Applies function to each node
+- **ft_lstlast**: Returns last node
+- **ft_lstmap**: Maps function to list and creates new list
+- **ft_lstnew**: Creates new node
+- **ft_lstsize**: Counts nodes in list
+
+---
+
+## Implementation Requirements
+1. **Library Restrictions**:
+   - Standard C library functions cannot be used (with some exceptions).
+2. **Error Handling**:
+   - Must properly handle invalid arguments and error states.
+3. **Code Standards**:
+   - Must comply with 42's Norm coding standards.
+
+---
+
+## Usage
+### Requirements
+- Linux or macOS
+- `make` command and `gcc` compiler installed
+
+### Compilation
 ```
 make
 ```
-### 使用
-```
+### Usage in Your Code
+```c
 #include "libft.h"
 ```
 ---
 
-## 課題の学びポイント
-- **基本関数の深い理解**：
-  標準関数の内部動作を理解し、再現する力を養う。
-- **エラーハンドリングと最適化**：
-  安定したコード設計とパフォーマンス改善。
+## Learning Outcomes
+- **Deep Understanding of Basic Functions**:
+  Understanding and recreating the internal workings of standard functions.
+- **Error Handling and Optimization**:
+  Developing stable code design and performance improvements.
 
 ---
 
-## 参考リンク
-- [42Tokyo公式ページ](https://42tokyo.jp/)
-- [Libft課題仕様書](https://github.com/42tokyo/libft)
-
+## References
+- [42Tokyo Official Page](https://42tokyo.jp/)
 ---
 
-## ライセンス
-このプロジェクトは42Tokyoの課題の一部であり、教育目的で使用されます。再配布や商用利用は制限される場合があります。
-
+## License
+This project is part of the 42Tokyo curriculum and is for educational purposes. Redistribution and commercial use may be restricted.
